@@ -1,0 +1,24 @@
+2026-06-06 16:54:45,142 INFO    MainThread:2750773 [wandb_setup.py:_flush():81] Current SDK version is 0.27.2
+2026-06-06 16:54:45,142 INFO    MainThread:2750773 [wandb_setup.py:_flush():81] Configure stats pid to 2750773
+2026-06-06 16:54:45,142 INFO    MainThread:2750773 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-06-06 16:54:45,142 INFO    MainThread:2750773 [wandb_init.py:setup_run_log_directory():723] Logging user logs to /home/raymond112514/d4rl/flow/wandb/run-20260606_165445-tem3t9v2/logs/debug.log
+2026-06-06 16:54:45,142 INFO    MainThread:2750773 [wandb_init.py:setup_run_log_directory():724] Logging internal logs to /home/raymond112514/d4rl/flow/wandb/run-20260606_165445-tem3t9v2/logs/debug-internal.log
+2026-06-06 16:54:45,142 INFO    MainThread:2750773 [wandb_init.py:init():766] calling init triggers
+2026-06-06 16:54:45,142 INFO    MainThread:2750773 [wandb_init.py:init():771] wandb.init called with sweep_config: {}
+config: {'mode': 'unconditional', 'dataset_id': 'D4RL/pointmaze/large-dense-v2', 'ac_chunk': 1, 'epochs': 50, 'batch_size': 256, 'lr': 0.0001, 'hidden_dim': 256, 'n_layers': 4, 'time_emb_dim': 64, 'sample_steps': 20, 'num_workers': 0, 'seed': 0, 'log_interval': 100, 'eval_every': 10000, 'eval_rollouts': 5, 'save_every': 10, 'checkpoint_dir': 'checkpoints/unconditioned_ac1', 'resume': None, 'cpu': False, 'wandb_project': 'flow-pointmaze-bc', 'wandb_entity': None, 'wandb_run_name': None, 'wandb_group': None, 'wandb_run_id': None, 'no_wandb': False, 'n_samples': 1000000, 'cond_dim': 4, 'action_dim': 2, 'flow_dim': 2, 'obs_dim': 4, '_wandb': {}}
+2026-06-06 16:54:45,142 INFO    MainThread:2750773 [wandb_init.py:init():814] starting backend
+2026-06-06 16:54:45,143 INFO    MainThread:2750773 [wandb_init.py:init():829] sending inform_init request
+2026-06-06 16:54:45,604 INFO    MainThread:2750773 [wandb_init.py:init():834] backend started and connected
+2026-06-06 16:54:45,634 INFO    MainThread:2750773 [wandb_init.py:init():904] updated telemetry
+2026-06-06 16:54:45,635 INFO    MainThread:2750773 [wandb_init.py:init():927] communicating run to backend with 90.0 second timeout
+2026-06-06 16:54:45,850 INFO    MainThread:2750773 [wandb_init.py:init():972] starting run threads in backend
+2026-06-06 16:54:45,982 INFO    MainThread:2750773 [wandb_run.py:_console_start():2523] atexit reg
+2026-06-06 16:54:45,982 INFO    MainThread:2750773 [wandb_run.py:_redirect():2373] redirect: wrap_raw
+2026-06-06 16:54:45,982 INFO    MainThread:2750773 [wandb_run.py:_redirect():2442] Wrapping output streams.
+2026-06-06 16:54:45,982 INFO    MainThread:2750773 [wandb_run.py:_redirect():2465] Redirects installed.
+2026-06-06 16:54:45,986 INFO    MainThread:2750773 [wandb_init.py:init():1010] run started, returning control to user process
+2026-06-06 17:38:59,089 INFO    MainThread:2750773 [wandb_run.py:_finish():2285] finishing run raymond1123581321-university-of-california-berkeley/flow-pointmaze-bc/tem3t9v2
+2026-06-06 17:38:59,089 INFO    MainThread:2750773 [wandb_run.py:_atexit_cleanup():2490] got exitcode: 0
+2026-06-06 17:38:59,089 INFO    MainThread:2750773 [wandb_run.py:_restore():2472] restore
+2026-06-06 17:38:59,090 INFO    MainThread:2750773 [wandb_run.py:_restore():2478] restore done
+2026-06-06 17:39:00,234 INFO    MainThread:2750773 [wandb_run.py:_footer_sync_info():3891] logging synced files

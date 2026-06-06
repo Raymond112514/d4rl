@@ -1,0 +1,156 @@
+_wandb:
+    value:
+        cli_version: 0.27.2
+        e:
+            yxp0uj1s9t3uzpceozi88znxip5mts4m:
+                args:
+                    - --mode
+                    - goal_conditioned
+                    - --eval-every
+                    - "10000"
+                    - --eval-rollouts
+                    - "5"
+                    - --ac-chunk
+                    - "1"
+                    - --checkpoint-dir
+                    - checkpoints/goal_conditioned_ac1
+                codePath: train.py
+                codePathLocal: train.py
+                cpu_count: 128
+                cpu_count_logical: 255
+                cudaVersion: "12.5"
+                disk:
+                    /:
+                        total: "959654658048"
+                        used: "338533220352"
+                email: raymond1123581321@gmail.com
+                executable: /home/raymond112514/miniconda3/envs/d4rl/bin/python
+                gpu: NVIDIA A100-SXM4-80GB
+                gpu_count: 8
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-fd84343d-cacc-f0fa-7c1a-28edbaee4d06
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-5eee2ce9-9a54-938f-9200-4ef6acc5873b
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-7b524209-b251-a936-28b1-717d7b019d18
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-3a3a36a0-0446-1bba-2752-50720249c772
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-e4128616-166f-bce6-3f1f-6de980aea862
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-6928ee67-8bef-ecd1-ab78-f4a646f65175
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-60c463f1-f39c-b127-2930-18a91ed82e08
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-3474e719-4a31-605c-2e55-f009d34836f6
+                host: dgx6
+                memory:
+                    total: "2164280152064"
+                os: Linux-6.8.0-31-generic-x86_64-with-glibc2.39
+                program: /home/raymond112514/d4rl/flow/train.py
+                python: CPython 3.11.15
+                root: /home/raymond112514/d4rl/flow
+                slurm:
+                    conf: /etc/slurm/slurm.conf
+                startedAt: "2026-06-06T16:42:16.739834Z"
+                writerId: yxp0uj1s9t3uzpceozi88znxip5mts4m
+        m: []
+        python_version: 3.11.15
+        t:
+            "1":
+                - 1
+            "2":
+                - 1
+            "3":
+                - 13
+                - 16
+                - 61
+            "4": 3.11.15
+            "5": 0.27.2
+            "12": 0.27.2
+            "13": linux-x86_64
+ac_chunk:
+    value: 1
+action_dim:
+    value: 2
+batch_size:
+    value: 256
+checkpoint_dir:
+    value: checkpoints/goal_conditioned_ac1
+cond_dim:
+    value: 6
+cpu:
+    value: false
+dataset_id:
+    value: D4RL/pointmaze/large-dense-v2
+epochs:
+    value: 50
+eval_every:
+    value: 10000
+eval_rollouts:
+    value: 5
+flow_dim:
+    value: 2
+hidden_dim:
+    value: 256
+log_interval:
+    value: 100
+lr:
+    value: 0.0001
+mode:
+    value: goal_conditioned
+n_layers:
+    value: 4
+n_samples:
+    value: 1000000
+no_wandb:
+    value: false
+num_workers:
+    value: 0
+obs_dim:
+    value: 4
+resume:
+    value: null
+sample_steps:
+    value: 20
+save_every:
+    value: 10
+seed:
+    value: 0
+time_emb_dim:
+    value: 64
+wandb_entity:
+    value: null
+wandb_group:
+    value: null
+wandb_project:
+    value: flow-pointmaze-bc
+wandb_run_id:
+    value: null
+wandb_run_name:
+    value: null

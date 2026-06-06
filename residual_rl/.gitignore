@@ -1,0 +1,4 @@
+# Training artifacts
+checkpoints/
+eval_plots/
+wandb/

@@ -1,0 +1,34 @@
+Dataset:        D4RL/pointmaze/large-dense-v2
+Mode:           goal_conditioned
+Action chunk:   1
+Samples:        1000000
+Device:         cuda
+Eval every:     10000 steps
+Eval rollouts:  5
+Checkpoint dir: checkpoints/goal_conditioned_ac1
+Traceback (most recent call last):
+  File "/home/raymond112514/d4rl/flow/train.py", line 83, in <module>
+    main()
+  File "/home/raymond112514/d4rl/flow/train.py", line 79, in main
+    trainer.train()
+  File "/home/raymond112514/d4rl/flow/fm_bc/trainers/bc_trainer.py", line 281, in train
+    epoch_loss = self.train_epoch()
+                 ^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/d4rl/flow/fm_bc/trainers/bc_trainer.py", line 205, in train_epoch
+    for batch in self.loader:
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 708, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 764, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/home/raymond112514/d4rl/flow/fm_bc/datasets/pointmaze.py", line 142, in __getitem__
+    "obs": torch.as_tensor(obs, dtype=torch.float32),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

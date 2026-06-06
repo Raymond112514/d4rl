@@ -1,0 +1,80 @@
+Dataset:        D4RL/pointmaze/large-dense-v2
+Mode:           unconditional
+Action chunk:   1
+Samples:        1000000
+Device:         cuda
+Eval every:     10000 steps
+Eval rollouts:  5
+Checkpoint dir: checkpoints/unconditioned_ac1
+epoch    1  loss=1.650030
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+epoch    2  loss=1.519506
+AdroitHandRelocateDense-v1, AdroitHandHammerDense-v1, AdroitHandDoorDense-v1 environment's reward functions were updated in v1.2.1 without an environment version update. Therefore, use gymnasium-robotics==1.2.0 for v1 reproducibility or use v2 in gymnasium-robotics>=1.4.3. See https://github.com/Farama-Foundation/Gymnasium-Robotics/pull/220 for more details
+  eval step=10000 success=0.200 return=30.584 plot=checkpoints/unconditioned_ac1/rollouts/step_010000.png
+epoch    3  loss=1.400931
+epoch    4  loss=1.334302
+epoch    5  loss=1.313488
+  eval step=20000 success=0.000 return=22.551 plot=checkpoints/unconditioned_ac1/rollouts/step_020000.png
+epoch    6  loss=1.293125
+epoch    7  loss=1.273549
+  eval step=30000 success=0.200 return=20.469 plot=checkpoints/unconditioned_ac1/rollouts/step_030000.png
+epoch    8  loss=1.251774
+epoch    9  loss=1.220174
+epoch   10  loss=1.196872
+  eval step=40000 success=0.000 return=40.860 plot=checkpoints/unconditioned_ac1/rollouts/step_040000.png
+epoch   11  loss=1.174653
+epoch   12  loss=1.155887
+  eval step=50000 success=0.200 return=30.085 plot=checkpoints/unconditioned_ac1/rollouts/step_050000.png
+epoch   13  loss=1.136598
+epoch   14  loss=1.102870
+epoch   15  loss=1.048984
+  eval step=60000 success=0.600 return=34.601 plot=checkpoints/unconditioned_ac1/rollouts/step_060000.png
+epoch   16  loss=1.008878
+epoch   17  loss=0.987064
+  eval step=70000 success=0.200 return=33.942 plot=checkpoints/unconditioned_ac1/rollouts/step_070000.png
+epoch   18  loss=0.968467
+epoch   19  loss=0.953105
+epoch   20  loss=0.941267
+  eval step=80000 success=0.400 return=17.513 plot=checkpoints/unconditioned_ac1/rollouts/step_080000.png
+epoch   21  loss=0.927541
+epoch   22  loss=0.914288
+epoch   23  loss=0.907862
+  eval step=90000 success=0.600 return=30.161 plot=checkpoints/unconditioned_ac1/rollouts/step_090000.png
+epoch   24  loss=0.896936
+epoch   25  loss=0.883055
+  eval step=100000 success=0.200 return=14.782 plot=checkpoints/unconditioned_ac1/rollouts/step_100000.png
+epoch   26  loss=0.867952
+epoch   27  loss=0.853232
+epoch   28  loss=0.842164
+  eval step=110000 success=0.200 return=33.088 plot=checkpoints/unconditioned_ac1/rollouts/step_110000.png
+epoch   29  loss=0.828822
+epoch   30  loss=0.820009
+  eval step=120000 success=0.600 return=32.504 plot=checkpoints/unconditioned_ac1/rollouts/step_120000.png
+epoch   31  loss=0.808542
+epoch   32  loss=0.800392
+epoch   33  loss=0.788617
+  eval step=130000 success=0.000 return=38.730 plot=checkpoints/unconditioned_ac1/rollouts/step_130000.png
+epoch   34  loss=0.781342
+epoch   35  loss=0.772211
+  eval step=140000 success=0.400 return=37.394 plot=checkpoints/unconditioned_ac1/rollouts/step_140000.png
+epoch   36  loss=0.768414
+epoch   37  loss=0.761413
+epoch   38  loss=0.758286
+  eval step=150000 success=0.600 return=42.454 plot=checkpoints/unconditioned_ac1/rollouts/step_150000.png
+epoch   39  loss=0.753645
+epoch   40  loss=0.748555
+  eval step=160000 success=0.400 return=39.573 plot=checkpoints/unconditioned_ac1/rollouts/step_160000.png
+epoch   41  loss=0.744956
+epoch   42  loss=0.741664
+epoch   43  loss=0.739604
+  eval step=170000 success=0.400 return=37.825 plot=checkpoints/unconditioned_ac1/rollouts/step_170000.png
+epoch   44  loss=0.736563
+epoch   45  loss=0.734427
+epoch   46  loss=0.732887
+  eval step=180000 success=1.000 return=49.128 plot=checkpoints/unconditioned_ac1/rollouts/step_180000.png
+epoch   47  loss=0.729967
+epoch   48  loss=0.727583
+  eval step=190000 success=0.800 return=19.773 plot=checkpoints/unconditioned_ac1/rollouts/step_190000.png
+epoch   49  loss=0.725635
+epoch   50  loss=0.722803

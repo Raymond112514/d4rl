@@ -1,0 +1,11 @@
+# Install PyTorch for CUDA 12.x drivers (e.g. driver 555 / CUDA 12.5):
+# pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0
+numpy>=1.21
+minari>=0.5
+gymnasium>=1.0
+gymnasium-robotics>=1.2.4
+matplotlib>=3.5
+imageio-ffmpeg>=0.5
+wandb>=0.15
+Pillow>=9.0
