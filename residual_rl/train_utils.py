@@ -51,6 +51,14 @@ class WandbCallback(BaseCallback):
         self.success_count = 0
         self.timesteps = 0
 
+    def _on_training_start(self) -> None:
+        if self.eval_env is None or self.eval_episodes <= 0:
+            return
+        saved_timesteps = self.timesteps
+        self.timesteps = 0
+        self.evaluate(self.model, metric_key="eval/success_rate")
+        self.timesteps = saved_timesteps
+
     def _on_step(self) -> bool:
         rewards = self.locals["rewards"]
         dones = self.locals["dones"]
@@ -103,7 +111,7 @@ class WandbCallback(BaseCallback):
                 agent,
                 self.eval_episodes,
                 self.max_steps,
-                deterministic=True,
+                deterministic=False,
                 print_action_stride=self.plot_arrow_stride,
             )
 
@@ -201,14 +209,14 @@ def collect_rollouts(
                 next_obs, rewards, dones, infos, action_batch = env.step_rand(
                     obs,
                     model=model,
-                    deterministic=True,
+                    deterministic=False,
                 )
                 obs_batch = obs
                 next_obs_batch = next_obs
             else:
                 next_obs, reward, terminated, truncated, info, action_out = env.step_rand(
                     model=model,
-                    deterministic=True,
+                    deterministic=False,
                 )
                 rewards = np.array([reward], dtype=np.float32)
                 dones = np.array([terminated or truncated or reward >= 0.0], dtype=bool)

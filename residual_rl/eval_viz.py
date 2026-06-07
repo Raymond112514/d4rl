@@ -54,7 +54,7 @@ def collect_eval_rollout(
     max_steps: int,
     *,
     rollout_idx: int = 1,
-    deterministic: bool = True,
+    deterministic: bool = False,
     print_action_stride: int = 0,
 ) -> dict[str, Any]:
     """Collect one single-env eval rollout."""
@@ -119,7 +119,7 @@ def collect_eval_rollouts(
     num_rollouts: int,
     max_steps: int,
     *,
-    deterministic: bool = True,
+    deterministic: bool = False,
     print_action_stride: int = 0,
 ) -> list[dict[str, Any]]:
     """Collect eval rollouts from a single-env or vectorized wrapper."""

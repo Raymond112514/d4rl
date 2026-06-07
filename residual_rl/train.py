@@ -235,7 +235,6 @@ def main() -> None:
     )
 
     seed_env = make_vec_env(args, reset_options)
-    wandb_callback.evaluate(model, metric_key="eval/base_success_rate")
 
     if args.init_rollouts > 0:
         print(f"Collecting {args.init_rollouts} initial rollouts...")
