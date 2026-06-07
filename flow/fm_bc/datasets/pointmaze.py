@@ -100,6 +100,45 @@ def build_chunk_indices(episodes: list[EpisodeBuffer]) -> list[tuple[int, int]]:
     return indices
 
 
+def subsample_chunk_indices(
+    indices: list[tuple[int, int]],
+    data_fraction: float,
+    *,
+    seed: int = 0,
+) -> list[tuple[int, int]]:
+    if not 0.0 < data_fraction <= 1.0:
+        raise ValueError(f"data_fraction must be in (0, 1], got {data_fraction}")
+    if data_fraction >= 1.0:
+        return indices
+
+    n_total = len(indices)
+    n_keep = max(1, int(n_total * data_fraction))
+    rng = np.random.default_rng(seed)
+    chosen = rng.choice(n_total, size=n_keep, replace=False)
+    return [indices[int(i)] for i in chosen]
+
+
+def compute_stats_from_indices(
+    episodes: list[EpisodeBuffer],
+    indices: list[tuple[int, int]],
+    eps: float = 1e-6,
+) -> PointMazeStats:
+    obs = np.stack([episodes[ep_idx].obs[start] for ep_idx, start in indices], axis=0)
+    actions = np.stack(
+        [episodes[ep_idx].actions[start] for ep_idx, start in indices],
+        axis=0,
+    )
+    goals = np.stack([episodes[ep_idx].goals[start] for ep_idx, start in indices], axis=0)
+    return PointMazeStats(
+        obs_mean=obs.mean(axis=0),
+        obs_std=obs.std(axis=0) + eps,
+        goal_mean=goals.mean(axis=0),
+        goal_std=goals.std(axis=0) + eps,
+        action_mean=actions.mean(axis=0),
+        action_std=actions.std(axis=0) + eps,
+    )
+
+
 class PointMazeChunkDataset(Dataset):
     def __init__(
         self,
@@ -150,8 +189,13 @@ def build_pointmaze_dataset(
     dataset_id: str = "D4RL/pointmaze/large-dense-v2",
     ac_chunk: int = 10,
     download: bool = True,
+    data_fraction: float = 1.0,
+    seed: int = 0,
 ) -> tuple[PointMazeChunkDataset, PointMazeStats, int]:
     episodes = load_pointmaze_episodes(dataset_id=dataset_id, download=download)
-    stats = compute_stats(episodes)
+    all_indices = build_chunk_indices(episodes)
+    indices = subsample_chunk_indices(all_indices, data_fraction, seed=seed)
+    stats = compute_stats_from_indices(episodes, indices)
     dataset = PointMazeChunkDataset(episodes, stats, ac_chunk=ac_chunk)
+    dataset.indices = indices
     return dataset, stats, len(dataset)

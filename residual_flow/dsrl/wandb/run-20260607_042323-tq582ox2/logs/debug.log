@@ -1,0 +1,44 @@
+2026-06-07 04:23:23,419 INFO    MainThread:577519 [wandb_setup.py:_flush():81] Current SDK version is 0.27.2
+2026-06-07 04:23:23,419 INFO    MainThread:577519 [wandb_setup.py:_flush():81] Configure stats pid to 577519
+2026-06-07 04:23:23,419 INFO    MainThread:577519 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-06-07 04:23:23,419 INFO    MainThread:577519 [wandb_init.py:setup_run_log_directory():723] Logging user logs to /home/raymond112514/d4rl/residual_flow/dsrl/wandb/run-20260607_042323-tq582ox2/logs/debug.log
+2026-06-07 04:23:23,419 INFO    MainThread:577519 [wandb_init.py:setup_run_log_directory():724] Logging internal logs to /home/raymond112514/d4rl/residual_flow/dsrl/wandb/run-20260607_042323-tq582ox2/logs/debug-internal.log
+2026-06-07 04:23:23,420 INFO    MainThread:577519 [wandb_init.py:init():766] calling init triggers
+2026-06-07 04:23:23,420 INFO    MainThread:577519 [wandb_init.py:init():771] wandb.init called with sweep_config: {}
+config: {'checkpoint': '../../flow/checkpoints/goal_conditioned_ac1/epoch_0030.pt', 'residual_checkpoint': '../checkpoints/goal_conditioned_ac1_k8/obs_conditioned/best.pt', 'dataset_id': 'D4RL/pointmaze/large-dense-v2', 'seed': 0, 'n_envs': 4, 'sample_steps': 20, 'residual_sample_steps': 20, 'residual_scale': 1.0, 'action_mag': 2.0, 'max_episode_steps': 1000, 'init_rollouts': 20, 'standard_gauss_init': True, 'total_timesteps': 500000, 'buffer_size': 1000000, 'batch_size': 256, 'lr': 0.0003, 'gamma': 0.99, 'tau': 0.005, 'train_freq': 2, 'utd': 20, 'learning_starts': 1, 'ent_coef': -1, 'target_ent': -1, 'actor_gradient_steps': -1, 'net_arch': None, 'n_critics': 2, 'eval_episodes': 20, 'eval_plot_trajectories': 5, 'save_eval_plots': False, 'eval_plot_dir': '/home/raymond112514/d4rl/residual_flow/dsrl/eval_plots', 'eval_interval': 20000, 'plot_arrow_stride': 20, 'arrow_length_scale': 0.5, 'log_freq': 1000, 'save_freq': 50000, 'checkpoint_dir': '/home/raymond112514/d4rl/residual_flow/dsrl/checkpoints', 'run_name': '', 'wandb_project': 'd4rl-residual-flow-dsrl', 'wandb_group': '', 'no_wandb': False, 'cpu': False, 'fixed_eval': True, 'eval_seed': 42, 'goal_cell': [7, 1], 'reset_cell': [3, 10], 'start_cell': None, '_wandb': {}}
+2026-06-07 04:23:23,420 INFO    MainThread:577519 [wandb_init.py:init():814] starting backend
+2026-06-07 04:23:23,421 INFO    MainThread:577519 [wandb_init.py:init():829] sending inform_init request
+2026-06-07 04:23:23,777 INFO    MainThread:577519 [wandb_init.py:init():834] backend started and connected
+2026-06-07 04:23:23,807 INFO    MainThread:577519 [wandb_init.py:init():904] updated telemetry
+2026-06-07 04:23:23,816 INFO    MainThread:577519 [wandb_init.py:init():927] communicating run to backend with 90.0 second timeout
+2026-06-07 04:23:24,083 INFO    MainThread:577519 [wandb_init.py:init():972] starting run threads in backend
+2026-06-07 04:23:24,211 INFO    MainThread:577519 [wandb_run.py:_console_start():2523] atexit reg
+2026-06-07 04:23:24,211 INFO    MainThread:577519 [wandb_run.py:_redirect():2373] redirect: wrap_raw
+2026-06-07 04:23:24,211 INFO    MainThread:577519 [wandb_run.py:_redirect():2442] Wrapping output streams.
+2026-06-07 04:23:24,211 INFO    MainThread:577519 [wandb_run.py:_redirect():2465] Redirects installed.
+2026-06-07 04:23:24,213 INFO    MainThread:577519 [wandb_init.py:init():1010] run started, returning control to user process
+2026-06-07 05:48:38,430 INFO    wandb-AsyncioManager-main:577519 [service_client.py:_forward_responses():122] [no run ID] Reached EOF.
+2026-06-07 05:48:38,430 INFO    wandb-AsyncioManager-main:577519 [mailbox.py:close():154] [no run ID] Closing mailbox, abandoning 2 handles.
+2026-06-07 05:48:38,431 ERROR   wandb-AsyncioManager-main:577519 [asyncio_manager.py:fn_wrap_exceptions():184] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/wandb/sdk/lib/asyncio_manager.py", line 182, in fn_wrap_exceptions
+    await fn()
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/wandb/sdk/lib/run_messages.py", line 90, in loop
+    await asyncio_compat.race(
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/wandb/sdk/lib/asyncio_compat.py", line 278, in race
+    async with open_task_group(race=True) as tg:
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/wandb/sdk/lib/asyncio_compat.py", line 240, in open_task_group
+    await task_group._wait_all(race=race, timeout=exit_timeout)
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/wandb/sdk/lib/asyncio_compat.py", line 180, in _wait_all
+    raise exc
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/wandb/sdk/lib/run_messages.py", line 113, in _print_all
+    result = await handle.wait_async(timeout=None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/wandb/sdk/mailbox/mailbox_handle.py", line 127, in wait_async
+    response = await self._handle.wait_async(timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/wandb/sdk/mailbox/response_handle.py", line 123, in wait_async
+    raise HandleAbandonedError()
+wandb.sdk.mailbox.mailbox_handle.HandleAbandonedError

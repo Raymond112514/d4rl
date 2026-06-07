@@ -32,6 +32,12 @@ def parse_args() -> argparse.Namespace:
         default="D4RL/pointmaze/large-dense-v2",
     )
     parser.add_argument("--ac-chunk", type=int, default=10, help="Action chunk size")
+    parser.add_argument(
+        "--data-fraction",
+        type=float,
+        default=1.0,
+        help="Fraction of dataset transitions to use for training (e.g. 0.5 for 50%%)",
+    )
     parser.add_argument("--epochs", type=int, default=50)
     parser.add_argument("--batch-size", type=int, default=256)
     parser.add_argument("--lr", type=float, default=1e-4)
@@ -74,7 +80,12 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    args.checkpoint_dir = args.checkpoint_dir.format(mode=args.mode)
+    if not 0.0 < args.data_fraction <= 1.0:
+        raise ValueError("--data-fraction must be in (0, 1]")
+    fraction_tag = f"_{args.data_fraction:g}" if args.data_fraction < 1.0 else ""
+    args.checkpoint_dir = args.checkpoint_dir.format(
+        mode=f"{args.mode}_ac{args.ac_chunk}{fraction_tag}"
+    )
     trainer = BCTrainer(args)
     trainer.train()
 

@@ -1,0 +1,350 @@
+/home/raymond112514/d4rl/residual_flow/dsrl/../../../dsrl/stable-baselines3/stable_baselines3/common/vec_env/base_vec_env.py:78: UserWarning: The `render_mode` attribute is not defined in your environment. It will be set to None.
+  warnings.warn("The `render_mode` attribute is not defined in your environment. It will be set to None.")
+Using cuda device
+/home/raymond112514/d4rl/residual_flow/dsrl/../../../dsrl/stable-baselines3/stable_baselines3/common/vec_env/base_vec_env.py:78: UserWarning: The `render_mode` attribute is not defined in your environment. It will be set to None.
+  warnings.warn("The `render_mode` attribute is not defined in your environment. It will be set to None.")
+Collecting 20 initial rollouts...
+Collecting rollout round 1/5
+Collecting rollout round 2/5
+Collecting rollout round 3/5
+Collecting rollout round 4/5
+Collecting rollout round 5/5
+Initial rollout success rate: 0.200
+eval/success_rate: 0.250 (5/20 successes)
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 1e+03    |
+|    ep_rew_mean     | -1       |
+| time/              |          |
+|    episodes        | 4        |
+|    fps             | 4        |
+|    time_elapsed    | 902      |
+|    total_timesteps | 4000     |
+| train/             |          |
+|    actor_loss      | 25       |
+|    critic_loss     | 0.478    |
+|    ent_coef        | 0.0509   |
+|    ent_coef_loss   | -9.39    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 9980     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 1e+03    |
+|    ep_rew_mean     | -1       |
+| time/              |          |
+|    episodes        | 8        |
+|    fps             | 6        |
+|    time_elapsed    | 1167     |
+|    total_timesteps | 8000     |
+| train/             |          |
+|    actor_loss      | 49.1     |
+|    critic_loss     | 1.31     |
+|    ent_coef        | 0.00914  |
+|    ent_coef_loss   | -0.386   |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 19980    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 1e+03    |
+|    ep_rew_mean     | -1       |
+| time/              |          |
+|    episodes        | 12       |
+|    fps             | 8        |
+|    time_elapsed    | 1428     |
+|    total_timesteps | 12000    |
+| train/             |          |
+|    actor_loss      | 57.7     |
+|    critic_loss     | 2.18     |
+|    ent_coef        | 0.0192   |
+|    ent_coef_loss   | -0.134   |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 29980    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 1e+03    |
+|    ep_rew_mean     | -1       |
+| time/              |          |
+|    episodes        | 16       |
+|    fps             | 9        |
+|    time_elapsed    | 1672     |
+|    total_timesteps | 16000    |
+| train/             |          |
+|    actor_loss      | 63.7     |
+|    critic_loss     | 2.33     |
+|    ent_coef        | 0.0195   |
+|    ent_coef_loss   | 0.0407   |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 39980    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 1e+03    |
+|    ep_rew_mean     | -1       |
+| time/              |          |
+|    episodes        | 20       |
+|    fps             | 10       |
+|    time_elapsed    | 1915     |
+|    total_timesteps | 20000    |
+| train/             |          |
+|    actor_loss      | 65.3     |
+|    critic_loss     | 7.56     |
+|    ent_coef        | 0.0212   |
+|    ent_coef_loss   | 0.671    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 49980    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 1e+03    |
+|    ep_rew_mean     | -1       |
+| time/              |          |
+|    episodes        | 24       |
+|    fps             | 11       |
+|    time_elapsed    | 2167     |
+|    total_timesteps | 24000    |
+| train/             |          |
+|    actor_loss      | 65.7     |
+|    critic_loss     | 2.96     |
+|    ent_coef        | 0.0192   |
+|    ent_coef_loss   | -0.0695  |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 59980    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 1e+03    |
+|    ep_rew_mean     | -1       |
+| time/              |          |
+|    episodes        | 28       |
+|    fps             | 11       |
+|    time_elapsed    | 2403     |
+|    total_timesteps | 28000    |
+| train/             |          |
+|    actor_loss      | 66       |
+|    critic_loss     | 2.53     |
+|    ent_coef        | 0.0204   |
+|    ent_coef_loss   | 0.0847   |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 69980    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 927      |
+|    ep_rew_mean     | -0.875   |
+| time/              |          |
+|    episodes        | 32       |
+|    fps             | 12       |
+|    time_elapsed    | 2602     |
+|    total_timesteps | 31268    |
+| train/             |          |
+|    actor_loss      | 68.2     |
+|    critic_loss     | 3.57     |
+|    ent_coef        | 0.0209   |
+|    ent_coef_loss   | 1.11     |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 78160    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 888      |
+|    ep_rew_mean     | -0.806   |
+| time/              |          |
+|    episodes        | 36       |
+|    fps             | 12       |
+|    time_elapsed    | 2712     |
+|    total_timesteps | 33084    |
+| train/             |          |
+|    actor_loss      | 69.2     |
+|    critic_loss     | 3.76     |
+|    ent_coef        | 0.0182   |
+|    ent_coef_loss   | -0.519   |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 82700    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 885      |
+|    ep_rew_mean     | -0.8     |
+| time/              |          |
+|    episodes        | 40       |
+|    fps             | 12       |
+|    time_elapsed    | 2971     |
+|    total_timesteps | 37084    |
+| train/             |          |
+|    actor_loss      | 70.5     |
+|    critic_loss     | 4.56     |
+|    ent_coef        | 0.0227   |
+|    ent_coef_loss   | 0.705    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 92700    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 896      |
+|    ep_rew_mean     | -0.818   |
+| time/              |          |
+|    episodes        | 44       |
+|    fps             | 12       |
+|    time_elapsed    | 3215     |
+|    total_timesteps | 41084    |
+| train/             |          |
+|    actor_loss      | 71.8     |
+|    critic_loss     | 2.42     |
+|    ent_coef        | 0.0223   |
+|    ent_coef_loss   | 0.381    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 102700   |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 905      |
+|    ep_rew_mean     | -0.833   |
+| time/              |          |
+|    episodes        | 48       |
+|    fps             | 13       |
+|    time_elapsed    | 3406     |
+|    total_timesteps | 45084    |
+| train/             |          |
+|    actor_loss      | 75.1     |
+|    critic_loss     | 6.12     |
+|    ent_coef        | 0.0192   |
+|    ent_coef_loss   | -0.421   |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 112700   |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 912      |
+|    ep_rew_mean     | -0.846   |
+| time/              |          |
+|    episodes        | 52       |
+|    fps             | 13       |
+|    time_elapsed    | 3617     |
+|    total_timesteps | 49084    |
+| train/             |          |
+|    actor_loss      | 77       |
+|    critic_loss     | 5.65     |
+|    ent_coef        | 0.0186   |
+|    ent_coef_loss   | -0.526   |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 122700   |
+---------------------------------
+logging timesteps 0 50000 50000
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 918      |
+|    ep_rew_mean     | -0.857   |
+| time/              |          |
+|    episodes        | 56       |
+|    fps             | 13       |
+|    time_elapsed    | 3827     |
+|    total_timesteps | 53084    |
+| train/             |          |
+|    actor_loss      | 79.1     |
+|    critic_loss     | 2.54     |
+|    ent_coef        | 0.0169   |
+|    ent_coef_loss   | -0.129   |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 132700   |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 924      |
+|    ep_rew_mean     | -0.867   |
+| time/              |          |
+|    episodes        | 60       |
+|    fps             | 14       |
+|    time_elapsed    | 4046     |
+|    total_timesteps | 57084    |
+| train/             |          |
+|    actor_loss      | 79.6     |
+|    critic_loss     | 1.12     |
+|    ent_coef        | 0.0193   |
+|    ent_coef_loss   | 0.868    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 142700   |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 928      |
+|    ep_rew_mean     | -0.875   |
+| time/              |          |
+|    episodes        | 64       |
+|    fps             | 14       |
+|    time_elapsed    | 4264     |
+|    total_timesteps | 61084    |
+| train/             |          |
+|    actor_loss      | 80.4     |
+|    critic_loss     | 6.98     |
+|    ent_coef        | 0.0187   |
+|    ent_coef_loss   | -0.512   |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 152700   |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 933      |
+|    ep_rew_mean     | -0.882   |
+| time/              |          |
+|    episodes        | 68       |
+|    fps             | 14       |
+|    time_elapsed    | 4449     |
+|    total_timesteps | 65084    |
+| train/             |          |
+|    actor_loss      | 81.5     |
+|    critic_loss     | 7.2      |
+|    ent_coef        | 0.0207   |
+|    ent_coef_loss   | 0.0683   |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 162700   |
+---------------------------------
+Traceback (most recent call last):
+  File "/home/raymond112514/d4rl/residual_flow/dsrl/train.py", line 290, in <module>
+    main()
+  File "/home/raymond112514/d4rl/residual_flow/dsrl/train.py", line 273, in main
+    model.learn(
+  File "/home/raymond112514/d4rl/residual_flow/dsrl/../../../dsrl/stable-baselines3/stable_baselines3/sac/sac.py", line 316, in learn
+    return super().learn(
+           ^^^^^^^^^^^^^^
+  File "/home/raymond112514/d4rl/residual_flow/dsrl/../../../dsrl/stable-baselines3/stable_baselines3/common/off_policy_algorithm.py", line 342, in learn
+    self.train(batch_size=self.batch_size, gradient_steps=gradient_steps)
+  File "/home/raymond112514/d4rl/residual_flow/dsrl/../../../dsrl/stable-baselines3/stable_baselines3/sac/sac.py", line 264, in train
+    current_q_values = self.critic(replay_data.observations, replay_data.actions)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/d4rl/residual_flow/dsrl/../../../dsrl/stable-baselines3/stable_baselines3/common/policies.py", line 978, in forward
+    return tuple(q_net(qvalue_input) for q_net in self.q_networks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/d4rl/residual_flow/dsrl/../../../dsrl/stable-baselines3/stable_baselines3/common/policies.py", line 978, in <genexpr>
+    return tuple(q_net(qvalue_input) for q_net in self.q_networks)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/nn/modules/normalization.py", line 217, in forward
+    return F.layer_norm(
+           ^^^^^^^^^^^^^
+  File "/home/raymond112514/miniconda3/envs/d4rl/lib/python3.11/site-packages/torch/nn/functional.py", line 2910, in layer_norm
+    return torch.layer_norm(
+           ^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

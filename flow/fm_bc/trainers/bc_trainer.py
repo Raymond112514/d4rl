@@ -29,6 +29,8 @@ class BCTrainer:
             dataset_id=args.dataset_id,
             ac_chunk=args.ac_chunk,
             download=True,
+            data_fraction=args.data_fraction,
+            seed=args.seed,
         )
         self.loader = DataLoader(
             self.dataset,
@@ -84,7 +86,13 @@ class BCTrainer:
     def _maybe_init_wandb(self) -> None:
         if self.args.no_wandb:
             return
-        run_name = self.args.wandb_run_name or f"{self.args.mode}_chunk{self.args.ac_chunk}_seed{self.args.seed}"
+        fraction_tag = (
+            f"_{self.args.data_fraction:g}" if self.args.data_fraction < 1.0 else ""
+        )
+        run_name = (
+            self.args.wandb_run_name
+            or f"{self.args.mode}_ac{self.args.ac_chunk}{fraction_tag}_seed{self.args.seed}"
+        )
         config = vars(self.args).copy()
         config.update(
             {
@@ -239,6 +247,7 @@ class BCTrainer:
         print(f"Dataset:        {self.args.dataset_id}")
         print(f"Mode:           {self.args.mode}")
         print(f"Action chunk:   {self.args.ac_chunk}")
+        print(f"Data fraction:  {self.args.data_fraction}")
         print(f"Samples:        {self.n_samples}")
         print(f"Device:         {self.device}")
         print(f"Eval every:     {self.args.eval_every} steps")
