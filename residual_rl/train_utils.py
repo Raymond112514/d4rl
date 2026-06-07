@@ -5,6 +5,7 @@ from __future__ import annotations
 import os
 from typing import Any
 
+import matplotlib.pyplot as plt
 import numpy as np
 import torch
 import wandb
@@ -113,47 +114,55 @@ class WandbCallback(BaseCallback):
             f"({int(sum(successes))}/{len(rollouts)} successes)"
         )
 
+        wandb_payload: dict[str, Any] = {metric_key: success_rate}
+
+        paths_fig = plot_eval_paths(
+            rollouts,
+            dataset_id=self.dataset_id,
+            title=f"Eval paths @ step {self.timesteps}",
+            save_path=None,
+            show=False,
+            close_fig=False,
+        )
+        if self.use_wandb:
+            wandb_payload["eval/paths"] = wandb.Image(
+                paths_fig,
+                caption=f"All trajectories @ step {self.timesteps}",
+            )
+
+        if self.eval_plot_trajectories > 0:
+            plot_rollouts = rollouts[: self.eval_plot_trajectories]
+            arrows_fig = plot_eval_rollouts(
+                plot_rollouts,
+                dataset_id=self.dataset_id,
+                title=f"Eval action arrows @ step {self.timesteps}",
+                save_path=None,
+                show=False,
+                close_fig=False,
+                arrow_stride=self.plot_arrow_stride,
+                arrow_length_scale=self.arrow_length_scale,
+            )
+            if self.use_wandb:
+                wandb_payload["eval/arrows"] = wandb.Image(
+                    arrows_fig,
+                    caption=f"Action arrows (first {len(plot_rollouts)}) @ step {self.timesteps}",
+                )
+
         if self.eval_plot_dir is not None:
             os.makedirs(self.eval_plot_dir, exist_ok=True)
             step_tag = f"eval_step_{self.timesteps:07d}"
             paths_save_path = os.path.join(self.eval_plot_dir, f"{step_tag}_paths.png")
-            plot_eval_paths(
-                rollouts,
-                dataset_id=self.dataset_id,
-                title=f"Eval paths @ step {self.timesteps}",
-                save_path=paths_save_path,
-                show=False,
-            )
-
-            wandb_payload: dict[str, Any] = {metric_key: success_rate}
-            if self.use_wandb:
-                wandb_payload["eval/paths"] = wandb.Image(
-                    paths_save_path,
-                    caption=f"All trajectories @ step {self.timesteps}",
-                )
-
+            arrows_save_path = os.path.join(self.eval_plot_dir, f"{step_tag}_arrows.png")
+            paths_fig.savefig(paths_save_path, dpi=150, bbox_inches="tight")
             if self.eval_plot_trajectories > 0:
-                plot_rollouts = rollouts[: self.eval_plot_trajectories]
-                arrows_save_path = os.path.join(self.eval_plot_dir, f"{step_tag}_arrows.png")
-                plot_eval_rollouts(
-                    plot_rollouts,
-                    dataset_id=self.dataset_id,
-                    title=f"Eval action arrows @ step {self.timesteps}",
-                    save_path=arrows_save_path,
-                    show=False,
-                    arrow_stride=self.plot_arrow_stride,
-                    arrow_length_scale=self.arrow_length_scale,
-                )
-                if self.use_wandb:
-                    wandb_payload["eval/arrows"] = wandb.Image(
-                        arrows_save_path,
-                        caption=f"Action arrows (first {len(plot_rollouts)}) @ step {self.timesteps}",
-                    )
+                arrows_fig.savefig(arrows_save_path, dpi=150, bbox_inches="tight")
 
-            if self.use_wandb:
-                wandb.log(wandb_payload, step=self.timesteps)
-        elif self.use_wandb:
-            wandb.log({metric_key: success_rate}, step=self.timesteps)
+        if self.use_wandb:
+            wandb.log(wandb_payload, step=self.timesteps)
+
+        plt.close(paths_fig)
+        if self.eval_plot_trajectories > 0:
+            plt.close(arrows_fig)
 
         return success_rate
 

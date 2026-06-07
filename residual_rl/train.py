@@ -42,7 +42,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--action-mag", type=float, default=2.0, help="Residual action bound")
     parser.add_argument("--max-episode-steps", type=int, default=1000)
 
-    parser.add_argument("--init-rollouts", type=int, default=20, help="Initial zero-residual rollouts")
+    parser.add_argument(
+        "--init-rollouts",
+        type=int,
+        default=20,
+        help="Initial rollouts to seed the replay buffer before training",
+    )
+    parser.add_argument(
+        "--standard-gauss-init",
+        action="store_true",
+        help="Initialize SAC actor to output a standard Gaussian (DSRL-style policy init)",
+    )
     parser.add_argument("--total-timesteps", type=int, default=500_000)
     parser.add_argument("--buffer-size", type=int, default=1_000_000)
     parser.add_argument("--batch-size", type=int, default=256)
@@ -61,9 +71,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--eval-episodes", type=int, default=20)
     parser.add_argument("--eval-plot-trajectories", type=int, default=5)
     parser.add_argument(
+        "--save-eval-plots",
+        action="store_true",
+        help="Also save eval plot PNGs to disk (wandb logging is always on when wandb is enabled)",
+    )
+    parser.add_argument(
         "--eval-plot-dir",
         type=str,
         default=os.path.join(ROOT, "eval_plots"),
+        help="Directory for eval plot PNGs when --save-eval-plots is set",
     )
     parser.add_argument("--eval-interval", type=int, default=20_000)
     parser.add_argument("--plot-arrow-stride", type=int, default=20)
@@ -174,6 +190,7 @@ def main() -> None:
         activation_fn=torch.nn.Tanh,
         post_linear_modules=[torch.nn.LayerNorm],
         n_critics=args.n_critics,
+        standard_gauss_init=args.standard_gauss_init,
     )
 
     model = SAC(
@@ -210,7 +227,7 @@ def main() -> None:
         max_steps=args.max_episode_steps,
         eval_episodes=args.eval_episodes,
         eval_plot_trajectories=args.eval_plot_trajectories,
-        eval_plot_dir=args.eval_plot_dir,
+        eval_plot_dir=args.eval_plot_dir if args.save_eval_plots else None,
         dataset_id=args.dataset_id,
         eval_interval=args.eval_interval,
         plot_arrow_stride=args.plot_arrow_stride,
@@ -221,6 +238,7 @@ def main() -> None:
     wandb_callback.evaluate(model, metric_key="eval/base_success_rate")
 
     if args.init_rollouts > 0:
+        print(f"Collecting {args.init_rollouts} initial rollouts...")
         init_success = collect_rollouts(
             model,
             seed_env,

@@ -288,6 +288,7 @@ def plot_eval_rollouts(
     title: str,
     save_path: str | Path | None = None,
     show: bool = False,
+    close_fig: bool = True,
     arrow_stride: int = 20,
     arrow_length_scale: float = 0.5,
 ) -> plt.Figure:
@@ -388,7 +389,7 @@ def plot_eval_rollouts(
 
     if show:
         plt.show()
-    else:
+    elif close_fig:
         plt.close(fig)
 
     return fig
@@ -401,6 +402,7 @@ def plot_eval_paths(
     title: str,
     save_path: str | Path | None = None,
     show: bool = False,
+    close_fig: bool = True,
 ) -> plt.Figure:
     """Plot all eval trajectories on one maze, green=success and red=failure."""
     dataset = minari.load_dataset(dataset_id, download=False)
@@ -474,7 +476,7 @@ def plot_eval_paths(
 
     if show:
         plt.show()
-    else:
+    elif close_fig:
         plt.close(fig)
 
     return fig
